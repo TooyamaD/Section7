@@ -12,8 +12,14 @@ export default function App() {
 
   return (
     <>
-      <Insert Mtodo={Mtodo} Todo={Todo} setMtodo={setMtodo} setTodo={setTodo} />
-
+      <Insert
+        Mtodo={Mtodo}
+        Todo={Todo}
+        setMtodo={setMtodo}
+        setTodo={setTodo}
+        disabled={Mtodo.length >= 5}
+      />
+      {Mtodo.length >= 5 && <p>登録できるたTodoは5個までです(^_-)-☆</p>}
       <IncompleteArea
         Mtodo={Mtodo}
         Ktodo={Ktodo}
